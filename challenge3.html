@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Challenge 3</title>
+  <style>
+
+      .errorMsg {
+        font-family: 'Roboto', sans-serif;
+        /*font: Use a cool Google font*/
+        color:red;
+        display:none;
+      }
+  </style>
+
+  <script>
+    function checkForm(){
+      // event.preventDefault();
+      console.log("checkform runs");
+
+      let entername = document.querySelector("#name").value;
+      console.log("entername");
+
+      let enteraddress = document.querySelector("#addr").value;
+      console.log("enteraddress");
+
+      let namemsg = document.querySelector("#nameError");
+      let addrmsg = document.querySelector("#addressError");
+
+      var checked = true;
+
+      if (entername.length===0){
+        namemsg.style.display="block";
+        console.log("there's no name");
+        checked = false;
+      }
+      else{
+        namemsg.style.display="none";
+        console.log("there is a name");
+      };
+
+      if (enteraddress.length===0){
+        addrmsg.style.display="block";
+        console.log("there's an address");
+        checked = false;
+      }
+      else{
+        addrmsg.style.display="none";
+        console.log("there is no address");
+      };
+
+
+      return checked;
+
+      // return true;
+
+      // if (document.querySelector("#name").value==false){
+      //   let isokname =
+      //   document.querySelector("#nameError").style.display="block";
+      // }
+      // else{
+      //   let isokname = document.querySelector("#nameError").style.display='none';
+      // }
+      //
+      // return isokname;
+      //
+      // console.log("ran for name");
+      //
+      // if (document.querySelector("#addr").value==false){
+      //     document.querySelector("#addressError").style.display="block";
+      //   let isokaddr = false;
+      //   return isokaddr;
+      // }
+      //   else{
+      //     let isokaddr = true;
+      // }
+      // return isokaddr;
+      //
+      // console.log("ran for address");
+      // return false;
+ //      if (document.querySelector("#name").value == "")
+ // {
+ //    document.querySelector("#nameError").style.display=="block";
+
+ }
+
+      // Write a function that displays the appropriate error message(s) if a field is left blank.  Make sure the form action is not performed if either field is blank.
+  </script>
+</head>
+<body>
+    <h1>Challenge 3</h1>
+  <form action="challenge4.html" onsubmit="return checkForm()">
+        <fieldset>
+        <legend>Personal details</legend>
+          <label for="name">Full name: </label>
+            <input type="text" name="fullname" id="name"><br/>
+            <p class="errorMsg" id="nameError">Please enter your name above!</p>
+
+          <label for ="streetaddr"></label>
+            Street Address:
+            <input type="text" name="addr" id="addr">
+            <p class="errorMsg" id="addressError">Please enter your street address!</p>
+        </fieldset>
+        <input type="submit" value="Submit it!">
+    </form>
+</body>
+</html>
